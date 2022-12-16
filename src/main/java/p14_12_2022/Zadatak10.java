@@ -11,17 +11,22 @@ public class Zadatak10
         System.out.println("Unesi a: ");
         int a = s.nextInt();
 
-        if(a % 2 == 0)
+        if(a % 2 == 0 && a % 3 == 0)
         {
-            System.out.println("Broj je deljiv sa 2");
+            System.out.println("Broj je deljiv sa 2 i sa 3");
 
-        } else if (a % 3 == 0)
+        }
+        else if (a % 3 == 0)
         {
             System.out.println("Broj je deljiv sa 3");
         }
+        else if (a % 2 == 0)
+        {
+            System.out.println("Broj je deljiv sa 2");
+        }
         else
         {
-            System.out.println("Broj nije deljiv ni sa 2 ni sa 3s");
+            System.out.println("Broj nije deljiv ni sa 2 ni sa 3");
         }
 
     }
