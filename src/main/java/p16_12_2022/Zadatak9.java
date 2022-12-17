@@ -20,7 +20,12 @@ public class Zadatak9
         int trenutnoVreme = s.nextInt();
 
         int progres = 100 / (duzinaVidea / trenutnoVreme);
-        System.out.println(progres);
+
+        int minFull  = duzinaVidea / 60;
+        int secFull = duzinaVidea - (minFull * 60);
+
+        int minProgress = trenutnoVreme / 60;
+        int secProgress = trenutnoVreme - (minProgress * 60);
 
         for (int i = 1; i <= 100; i++)
         {
@@ -34,6 +39,11 @@ public class Zadatak9
             }
 
         }
+        System.out.println(" ");
+        System.out.println(minProgress + ":" + secProgress + " / " + minFull + ":" + secFull);
+
+
+
 
     }
 }
