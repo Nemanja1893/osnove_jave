@@ -39,8 +39,22 @@ public class Zadatak9
             }
 
         }
-        System.out.println(" ");
-        System.out.println(minProgress + ":" + secProgress + " / " + minFull + ":" + secFull);
+        if(secFull < 10)
+        {
+            System.out.println(" ");
+            System.out.println(minProgress + ":" + secProgress + " / " + minFull + ":" + "0" + secFull);
+        }
+        else if (secProgress < 10)
+        {
+            System.out.println(" ");
+            System.out.println(minProgress + ":" + "0" + secProgress + " / " + minFull + ":" + secFull);
+        }
+        else
+        {
+            System.out.println(" ");
+            System.out.println(minProgress + ":" + secProgress + " / " + minFull + ":" + secFull);
+        }
+
 
 
 
