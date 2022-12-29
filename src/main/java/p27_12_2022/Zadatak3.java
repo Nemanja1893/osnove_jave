@@ -38,6 +38,16 @@ public class Zadatak3
 //        Za automobile do 2000 kubika cena registracije kubikaza * 100din, za automobile
 //        preko 2000 kubika dodatno se uracunava 30% na cenu.
 
+//        atribut broj registracije
+//        da li je ukljucena klima u autu
+
+//        metodu dodajGas, koja povecava trenutnu brzinu za 10.
+
+//        metodu koci, koja smanjuje brzinu za 10. Brzina ne moze da ode ispod nule.
+
+//        metodu koja racuna i vraca trenutnu potrosnju auta. Metoda racuna po formuli:
+//        faktor klime - ako je ukljucena klima faktor je 1.2, ako nije ukljucena onda je 1.0
+//        (trenutna brzina / 100.0 * potrosnja na 100km) * faktor klime
 
 
             Auto prviAuto = new Auto();
@@ -49,7 +59,16 @@ public class Zadatak3
         prviAuto.kubikaza = 2500;
         prviAuto.mesecReg = 9;
         prviAuto.godinaProizvodnje = 1980;
+        prviAuto.brojReg = "NI111SS";
+        prviAuto.klimaRadi = true;
         prviAuto.printInfo();
+
+        prviAuto.dodajGas();
+        prviAuto.dodajGas();
+        prviAuto.koci();
+
+        System.out.println("Trenutna brzina " + prviAuto.trenutnaBrzina);
+        System.out.println("Trenutna potrosnja: " + prviAuto.trenutnaPotrosnja());
 
        if(prviAuto.isItSpeeding(100))
        {
@@ -94,7 +113,13 @@ public class Zadatak3
         drugiAuto.kubikaza = 1500;
         drugiAuto.mesecReg = 5;
         drugiAuto.godinaProizvodnje = 1922;
+        drugiAuto.maxBrzina = 250;
+        drugiAuto.kapacitetRez = 50;
+        drugiAuto.trenutnaKolGoriva = 36;
         drugiAuto.printInfo();
+
+
+
 
         if(drugiAuto.isItSpeeding(100))
         {
@@ -129,6 +154,13 @@ public class Zadatak3
         }
         System.out.println(" ");
 
+        drugiAuto.dodajGas();
+        drugiAuto.dodajGas();
+
+        drugiAuto.stampajTablu();
+
+        System.out.println(" ");
+        System.out.println("Cena goriva iznosi: " + drugiAuto.natociGorivo(5));
 
 
     }

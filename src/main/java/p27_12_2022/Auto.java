@@ -11,6 +11,12 @@ public class Auto
     public int mesecReg;
     public int kubikaza;
 
+    public String brojReg;
+    public boolean klimaRadi;
+    public int maxBrzina;
+    public int kapacitetRez;
+    public int trenutnaKolGoriva;
+
 
     public void printInfo()
     {
@@ -66,6 +72,55 @@ public class Auto
             value = ((this.kubikaza * 100) / 100) * 30;
         }
         return value;
+    }
+    public void dodajGas(){
+        if(trenutnaBrzina < maxBrzina)
+        {
+            trenutnaBrzina = trenutnaBrzina + 10;
+        }else {
+            trenutnaBrzina = maxBrzina;
+        }
+
+    }
+    public void koci(){
+        if(trenutnaBrzina > 0){
+            trenutnaBrzina = trenutnaBrzina - 10;
+        }
+        else{
+            trenutnaBrzina = 0;
+        }
+    }
+    public double trenutnaPotrosnja(){
+        double faktorKlime = 1.0;
+
+        if(klimaRadi)
+        {
+            faktorKlime = 1.2;
+        }
+        return (trenutnaBrzina / 100.0 * potrosnja) * faktorKlime;
+    }
+    public void stampajTablu(){
+        for (int i = 0; i < 100; i++) {
+            int crtice = trenutnaBrzina * 100 / maxBrzina;
+            if(crtice > i)
+            {
+                System.out.print("|");
+            }
+            else{
+                System.out.print("-");
+            }
+        }
+    }
+    public double natociGorivo(int gorivo){
+        int cenagoriva = 210;
+        if(trenutnaKolGoriva < kapacitetRez)
+        {
+            trenutnaKolGoriva = trenutnaKolGoriva + gorivo;
+            return gorivo * cenagoriva;
+
+        }else {
+            return (kapacitetRez - trenutnaKolGoriva) * cenagoriva;
+        }
     }
 
 
