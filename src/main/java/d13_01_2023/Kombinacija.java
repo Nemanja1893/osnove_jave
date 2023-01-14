@@ -5,25 +5,10 @@ import java.util.ArrayList;
 public class Kombinacija {
     private String id;
     private ArrayList<Integer> brojevi;
-    int jedan;
-    int dva;
-    int tri;
-    int cetri;
-    int pet;
-    int sest;
-    int sedam;
-
-
 
     public Kombinacija(String id, int jedan, int dva, int tri, int cetri, int pet, int sest, int sedam) {
         this.id = id;
-//        this.jedan = jedan;
-//        this.dva = dva;
-//        this.tri = tri;
-//        this.cetri = cetri;
-//        this.pet = pet;
-//        this.sest = sest;
-//        this.sedam = sedam;
+
         this.brojevi = new ArrayList<>();
 
         this.brojevi.add(jedan);
@@ -35,7 +20,6 @@ public class Kombinacija {
         this.brojevi.add(sedam);
 
     }
-
     public ArrayList<Integer> getBrojevi() {
         return brojevi;
     }
@@ -48,7 +32,6 @@ public class Kombinacija {
         }
         return counter == 7;
     }
-
     public void stampaj(){
         System.out.println("ID: " + this.id);
         System.out.println("Brojevi " );
